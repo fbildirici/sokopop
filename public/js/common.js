@@ -75,7 +75,7 @@ const SFX = {
 const unlockAudio = () => tone([1], 0.01, 'sine', 0.0001);
 
 // ───────── Magazin figürleri ─────────
-// Alttaki afişteki (img/figurler.png) karakterler, soldan sağa
+// Alttaki afişteki (img/figurler.webp) karakterler, soldan sağa
 const SPRITES = ['Tarkan', 'Mustafa Sandal', 'Seda Sayan', 'Mahsun Kırmızıgül', 'Zeki Müren', 'Ajda Pekkan',
   'Sezen Aksu', 'Emel Sayın', 'İbrahim Tatlıses', 'Bülent Ersoy', 'Yonca Evcimik', 'Harun Kolçak'];
 
@@ -141,3 +141,35 @@ const OPTION_STYLE = [
 ];
 const fmtSec = ms => (ms / 1000).toFixed(1).replace('.', ',') + ' sn';
 const LOG_ICON = { ok: '✓', taboo: '✗', pass: '↷', time: '⏱' };
+
+// ───────── Rastgele 90'lar ikonları ─────────
+// Her açılışta ekrana dağılır; içeriğin arkasında kalır, boşluklardan göz kırpar
+const STICKERS = ['tv', 'tamagotchi', 'bilgisayar', 'disket', 'cagri-cihazi', 'walkman', 'paten', 'teyp'];
+function scatterStickers() {
+  const small = innerWidth < 700;
+  const n = small ? 6 : 14;
+  const cols = small ? 2 : 7;
+  const rows = Math.ceil(n / cols);
+  const pool = STICKERS.slice().sort(() => Math.random() - 0.5);
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const layer = document.createElement('div');
+  layer.className = 'sticker-layer';
+  layer.setAttribute('aria-hidden', 'true');
+  for (let i = 0; i < n; i++) {
+    const c = i % cols, r = Math.floor(i / cols);
+    const size = Math.round(small ? rand(38, 60) : rand(56, 100));
+    // Izgara + rastgele kaydırma: üst üste binmeden her yere dağılsın (telefonda kenarlara)
+    const x = small ? (c === 0 ? rand(0, 10) : rand(90, 100)) : ((c + rand(0.1, 0.9)) / cols) * 100;
+    const y = ((r + rand(0.1, 0.9)) / rows) * 100;
+    const rot = Math.round(rand(-25, 25));
+    const img = document.createElement('img');
+    img.src = `/img/stickers/${pool[i % pool.length]}.webp`;
+    img.alt = '';
+    img.width = size;
+    img.style.cssText = `left:calc(${x.toFixed(1)}% - ${size / 2}px);top:calc(${y.toFixed(1)}% - ${size / 2}px);` +
+      `--r:${rot}deg;--r2:${rot + Math.round(rand(-10, 10))}deg;--d:${rand(4, 8).toFixed(1)}s;--delay:-${rand(0, 6).toFixed(1)}s`;
+    layer.appendChild(img);
+  }
+  document.body.prepend(layer);
+}
+scatterStickers();

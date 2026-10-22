@@ -37,4 +37,5 @@ Terminalde yazan ağ adresini (ör. `http://192.168.1.20:3000`) büyük ekranda 
 
 - Sorular: `public/data/questions.js` — `{ c: kategori, q: soru, a: [DOĞRU, yanlış, yanlış, yanlış], f: figür, x: açıklama }`
 - Tabu kartları: `public/data/tabu-cards.js`
-- Figür afişi: `public/img/figurler.png` (soru ekranlarında ilgili karakter buradan kırpılır)
+- Figür afişi: `public/img/figurler.webp` (soru ekranlarında ilgili karakter buradan kırpılır)
+- Dekor ikonları: `public/img/stickers/` (her açılışta sayfaya rastgele dağılır)
