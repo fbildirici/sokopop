@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
-  body { --gutter: 16px; padding: 14px var(--gutter) 0; overflow-x: hidden; }
+  body { padding: 14px 16px calc(16px + env(safe-area-inset-bottom)); overflow-x: hidden; }
   .app { max-width: 480px; margin: 0 auto; min-height: calc(100dvh - 30px); display: flex; flex-direction: column; gap: 14px; }
   .bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   .bar .logo { font-size: 26px; -webkit-text-stroke: 1.5px var(--ink); text-shadow: 2px 2px 0 var(--ink), 4px 4px 0 var(--blue); }
@@ -66,18 +66,13 @@
   .guess { flex: 1; display: grid; place-items: center; }
   .guess .burst { width: min(86vw, 360px); aspect-ratio: 1; background: var(--team); color: var(--team-ink); font-family: 'Bungee', Impact, sans-serif; font-size: 34px; line-height: 1.1; animation: wobble 1.6s ease-in-out infinite; }
   .feed { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .site-foot { padding-top: 22px; }
+  .site-foot img { width: min(480px, 100%); }
 </style>
 </head>
 <body>
 <div class="app" id="app"></div>
-<footer class="site-foot">
-  <div class="foot-lights" aria-hidden="true"></div>
-  <div class="foot-stage">
-    <img class="foot-figs" src="/img/figurler-sm.webp" width="900" height="300" alt="90'lar magazin figürleri: Tarkan, Mustafa Sandal, Seda Sayan, Mahsun Kırmızıgül, Zeki Müren, Ajda Pekkan, Sezen Aksu, Emel Sayın, İbrahim Tatlıses, Bülent Ersoy, Yonca Evcimik, Harun Kolçak" loading="lazy" decoding="async">
-  </div>
-  <div class="foot-ticker" aria-hidden="true"><div class="ticker-track"><span>Tarkan</span><span>Mustafa Sandal</span><span>Seda Sayan</span><span>Mahsun Kırmızıgül</span><span>Zeki Müren</span><span>Ajda Pekkan</span><span>Sezen Aksu</span><span>Emel Sayın</span><span>İbrahim Tatlıses</span><span>Bülent Ersoy</span><span>Yonca Evcimik</span><span>Harun Kolçak</span><span>Tarkan</span><span>Mustafa Sandal</span><span>Seda Sayan</span><span>Mahsun Kırmızıgül</span><span>Zeki Müren</span><span>Ajda Pekkan</span><span>Sezen Aksu</span><span>Emel Sayın</span><span>İbrahim Tatlıses</span><span>Bülent Ersoy</span><span>Yonca Evcimik</span><span>Harun Kolçak</span></div></div>
-  <p class="foot-note">ŞOKOPOP · 90'lar Magazin Yarışması · Manşetler sizden sorulur!</p>
-</footer>
+<footer class="site-foot"><img src="/img/figurler-sm.webp" width="900" height="300" alt="90'lar magazin figürleri: Tarkan, Mustafa Sandal, Seda Sayan, Mahsun Kırmızıgül, Zeki Müren, Ajda Pekkan, Sezen Aksu, Emel Sayın, İbrahim Tatlıses, Bülent Ersoy, Yonca Evcimik, Harun Kolçak"></footer>
 
 <script src="/vendor/peerjs.min.js"></script>
 <script src="/js/common.js"></script>
