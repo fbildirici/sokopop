@@ -1,0 +1,10 @@
+{
+  "name": "sokopop",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Şokopop — 90'lar magazin bilgi yarışması ve tabu oyunu (QR ile iki takım)",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "license": "MIT"
+}

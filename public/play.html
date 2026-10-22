@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffe14d">
+<title>Şokopop — Oyuncu</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8E%A4%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { padding: 14px 16px calc(16px + env(safe-area-inset-bottom)); overflow-x: hidden; }
+  .app { max-width: 480px; margin: 0 auto; min-height: calc(100dvh - 30px); display: flex; flex-direction: column; gap: 14px; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .bar .logo { font-size: 26px; -webkit-text-stroke: 1.5px var(--ink); text-shadow: 2px 2px 0 var(--ink), 4px 4px 0 var(--blue); }
+  .bar-right { display: flex; align-items: center; gap: 8px; }
+  .mini-score { display: flex; gap: 6px; font-family: 'Bungee', Impact, sans-serif; font-size: 15px; }
+  .mini-score span { border: 3px solid var(--ink); border-radius: 10px; padding: 3px 8px; background: var(--team); color: var(--team-ink); }
+  .status-pill { font-size: 11px; padding: 3px 8px; }
+  .panel { padding: 20px; display: grid; gap: 14px; text-align: center; }
+  .panel h2 { font-family: 'Bungee', Impact, sans-serif; margin: 0; font-size: 26px; line-height: 1.1; }
+  .panel p { margin: 0; line-height: 1.45; }
+  .teams { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .team-btn { font-family: 'Bungee', Impact, sans-serif; font-size: 15px; padding: 18px 8px; border: 4px solid var(--ink); border-radius: 14px; background: var(--team); color: var(--team-ink); box-shadow: 4px 4px 0 var(--ink); cursor: pointer; opacity: .55; word-break: break-word; }
+  .team-btn.sel { opacity: 1; transform: rotate(-2deg) scale(1.04); outline: 4px solid var(--ink); outline-offset: 3px; }
+  .badge { display: inline-block; font-family: 'Bungee', Impact, sans-serif; background: var(--team); color: var(--team-ink); border: 3px solid var(--ink); border-radius: 10px; padding: 6px 12px; }
+  .members { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .grow { flex: 1; }
+  .huge { font-size: 30px; padding: 26px; width: 100%; }
+  .link { background: none; border: none; text-decoration: underline; font: inherit; font-weight: 700; color: var(--muted); cursor: pointer; }
+  .btnrow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .timebar { height: 22px; border: 4px solid var(--ink); border-radius: 999px; background: #fff; overflow: hidden; position: relative; flex: none; }
+  .timebar i { position: absolute; inset: 0 auto 0 0; background: var(--team, var(--pink)); transition: width .25s linear; }
+  .timebar b { position: absolute; inset: 0; display: grid; place-items: center; font-family: 'Bungee', Impact, sans-serif; font-size: 13px; }
+  .timebar.hurry i { background: var(--red); }
+
+  /* Bilgi yarışması */
+  .qcard { padding: 16px; display: grid; gap: 10px; }
+  .qcard .qtext { font-weight: 800; font-size: 19px; line-height: 1.35; }
+  .qnum { font-family: 'Bungee', Impact, sans-serif; font-size: 14px; }
+  .answers { display: grid; gap: 10px; }
+  .answers .option { width: 100%; font: inherit; font-weight: 800; font-size: 18px; min-height: 68px; cursor: pointer; touch-action: manipulation; }
+  .answers .option:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+  .bigcd { font-family: 'Bungee', Impact, sans-serif; font-size: 110px; text-align: center; color: var(--pink); -webkit-text-stroke: 3px var(--ink); text-shadow: 5px 5px 0 var(--ink); }
+  .verdict { width: min(80vw, 320px); aspect-ratio: 1; margin: 0 auto; font-family: 'Bungee', Impact, sans-serif; font-size: 30px; line-height: 1.1; animation: pop 1.1s ease-out both, wobble 1.6s 1.1s ease-in-out infinite; }
+  @keyframes pop { 0% { transform: scale(.2) rotate(-30deg); opacity: 0; } 60% { transform: scale(1.06) rotate(4deg); opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+  .verdict.ok { background: var(--green); color: #fff; }
+  .verdict.no { background: var(--red); color: #fff; }
+  .verdict.late { background: #fff; }
+  .perks { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .bigrank { font-family: 'Bungee', Impact, sans-serif; font-size: 72px; line-height: 1; }
+
+  /* Tabu */
+  .card { overflow: hidden; text-align: center; }
+  .card .cat { background: var(--ink); color: var(--yellow); font-weight: 800; letter-spacing: 2px; font-size: 12px; padding: 7px; text-transform: uppercase; }
+  .card .word { font-family: 'Bungee', Impact, sans-serif; font-size: clamp(26px, 9vw, 40px); line-height: 1.1; padding: 22px 14px; background: var(--team); color: var(--team-ink); border-bottom: 4px solid var(--ink); word-break: break-word; }
+  .card .forbid-title { font-family: 'Bungee', Impact, sans-serif; color: var(--red); font-size: 15px; margin-top: 12px; }
+  .card ul { list-style: none; margin: 4px 0 14px; padding: 0 16px; }
+  .card li { font-weight: 800; font-size: 22px; padding: 7px 0; border-bottom: 2px dashed rgba(20,16,20,.2); }
+  .card li:last-child { border-bottom: none; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .actions .ok { grid-column: 1 / -1; font-size: 26px; padding: 22px; }
+  .taboo-big { font-size: 40px; padding: 30px; width: 100%; animation: wobble 1.2s ease-in-out infinite; }
+  .guess { flex: 1; display: grid; place-items: center; }
+  .guess .burst { width: min(86vw, 360px); aspect-ratio: 1; background: var(--team); color: var(--team-ink); font-family: 'Bungee', Impact, sans-serif; font-size: 34px; line-height: 1.1; animation: wobble 1.6s ease-in-out infinite; }
+  .feed { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .site-foot { padding-top: 22px; }
+  .site-foot img { width: min(480px, 100%); }
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<footer class="site-foot"><img src="/img/figurler-sm.png" alt="90'lar magazin figürleri: Tarkan, Mustafa Sandal, Seda Sayan, Mahsun Kırmızıgül, Zeki Müren, Ajda Pekkan, Sezen Aksu, Emel Sayın, İbrahim Tatlıses, Bülent Ersoy, Yonca Evcimik, Harun Kolçak"></footer>
+
+<script src="/vendor/peerjs.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/net.js"></script>
+<script src="/js/play.js"></script>
+</body>
+</html>
