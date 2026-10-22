@@ -33,6 +33,11 @@
       deck: [],
       cardSeq: 0,
     };
+    // Arşive sonradan eklenen kategoriler, kayıtlı oyunu olan büyük ekranda da açık gelsin
+    const qset = S.settings.quiz;
+    const known = new Set(qset.knownCats || qset.categories);
+    qset.categories = qset.categories.filter(c => CATS.includes(c)).concat(CATS.filter(c => !known.has(c)));
+    qset.knownCats = CATS.slice();
     let online = new Set();
     const now = () => Date.now();
     const changed = () => onChange && onChange();
