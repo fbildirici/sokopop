@@ -176,4 +176,60 @@ const TABU_CARDS = [
   { k: 'Polemik', w: 'Skandal', t: ['Olay', 'Rezalet', 'Manşet', 'Gündem', 'Şok'] },
   { k: 'Polemik', w: 'Objektife Yakalanmak', t: ['Fotoğraf', 'Paparazzi', 'Gizli', 'Sevgili', 'Kamera'] },
   { k: 'Polemik', w: 'Kıyafet Kazası', t: ['Super Bowl', 'Janet', 'Sahne', 'Elbise', 'Yırtılmak'] },
+
+  // Eski Diziler
+  { k: 'Eski Diziler', w: 'Çalıkuşu', t: ['Feride', 'Dizi', 'Öğretmen', 'Reşat Nuri', 'Kâmran'] },
+  { k: 'Eski Diziler', w: 'Hababam Sınıfı', t: ['Şaban', 'Mahmut Hoca', 'Okul', 'Öğrenci', 'Film'] },
+  { k: 'Eski Diziler', w: 'Olacak O Kadar', t: ['Levent Kırca', 'Skeç', 'Program', 'Mizah', 'Gündem'] },
+  { k: 'Eski Diziler', w: 'Tatlı Cadı', t: ['Samantha', 'Burun', 'Büyü', 'Dizi', 'Cadı'] },
+  { k: 'Eski Diziler', w: 'Küçük Ev', t: ['Laura', 'Ingalls', 'Çiftlik', 'Dizi', 'Prairie'] },
+  { k: 'Eski Diziler', w: 'Kaptan Tsubasa', t: ['Futbol', 'Çizgi Film', 'Japon', 'Top', 'Gol'] },
+  { k: 'Eski Diziler', w: 'Taş Devri', t: ['Fred', 'Çakmaktaş', 'Çizgi Film', 'Barney', 'Dinozor'] },
+  { k: 'Eski Diziler', w: 'He-Man', t: ['Grayskull', 'Kılıç', 'Güç', 'Çizgi Film', 'Skeletor'] },
+  { k: 'Eski Diziler', w: 'Ninja Kaplumbağalar', t: ['Pizza', 'Leonardo', 'Kanalizasyon', 'Çizgi Film', 'Dört'] },
+  { k: 'Eski Diziler', w: 'Heidi', t: ['Alpler', 'Dede', 'Keçi', 'Peter', 'Dağ'] },
+  { k: 'Eski Diziler', w: 'Uzay Yolu', t: ['Spock', 'Kaptan Kirk', 'Gemi', 'Vulkan', 'Dizi'] },
+  { k: 'Eski Diziler', w: 'Lost', t: ['Ada', 'Uçak', 'Kaza', 'Dizi', 'Sayılar'] },
+  { k: 'Eski Diziler', w: 'Friends', t: ['Central Perk', 'Rachel', 'Dizi', 'Arkadaş', 'Kanepe'] },
+  { k: 'Eski Diziler', w: 'Neşeli Günler', t: ['Adile Naşit', 'Münir Özkul', 'Film', 'Aile', 'Yeşilçam'] },
+
+  // Şarkılar
+  { k: 'Şarkılar', w: 'Dönence', t: ['Barış Manço', 'Şarkı', 'Dönmek', 'Kurtalan Ekspres', 'Rock'] },
+  { k: 'Şarkılar', w: 'Ketchup Şarkısı', t: ['Aserejé', 'Las Ketchup', 'Dans', 'Yaz', 'İspanyol'] },
+  { k: 'Şarkılar', w: 'Macarena', t: ['Dans', 'Los del Río', 'Yaz', 'Kol', 'İspanyolca'] },
+  { k: 'Şarkılar', w: 'Dragostea Din Tei', t: ['Mayahi', 'O-Zone', 'Şarkı', 'Moldova', 'Yaz'] },
+  { k: 'Şarkılar', w: 'Moonwalk', t: ['Michael Jackson', 'Dans', 'Geri', 'Kaymak', 'Ay'] },
+  { k: 'Şarkılar', w: 'Thriller', t: ['Michael Jackson', 'Zombi', 'Klip', 'Dans', 'Korku'] },
+  { k: 'Şarkılar', w: 'Hit', t: ['Şarkı', 'Liste', 'Bir Numara', 'Popüler', 'Çok Dinlenen'] },
+  { k: 'Şarkılar', w: 'Düet', t: ['İki', 'Birlikte', 'Şarkı', 'Ses', 'Söylemek'] },
+  { k: 'Şarkılar', w: 'Kurtalan Ekspres', t: ['Barış Manço', 'Grup', 'Tren', 'Rock', 'Müzik'] },
+
+  // Yarışmalar
+  { k: 'Yarışmalar', w: 'Bir Kelime Bir İşlem', t: ['TRT', 'Harf', 'Rakam', 'Yarışma', 'Hesap'] },
+  { k: 'Yarışmalar', w: 'Kelime Oyunu', t: ['Ali İhsan Varol', 'Harf', 'Yarışma', 'Soru', 'Kelime Avı'] },
+  { k: 'Yarışmalar', w: 'Yetenek Sizsiniz', t: ['Jüri', 'Yarışma', 'Acun', 'Sahne', 'Got Talent'] },
+  { k: 'Yarışmalar', w: 'O Ses Türkiye', t: ['Jüri', 'Koltuk', 'Dönmek', 'Şarkıcı', 'Yarışma'] },
+  { k: 'Yarışmalar', w: 'Dünya Güzeli', t: ['Taç', 'Yarışma', 'Güzellik', 'Miss', 'Azra Akın'] },
+  { k: 'Yarışmalar', w: 'Joker', t: ['Yarışma', 'Yardım', 'Seyirci', 'Telefon', 'Yarı Yarıya'] },
+  { k: 'Yarışmalar', w: 'Jüri', t: ['Puan', 'Yarışma', 'Karar', 'Değerlendirmek', 'Koltuk'] },
+
+  // Ülke Gündemi
+  { k: 'Ülke Gündemi', w: 'Bir Dakika Karanlık', t: ['Işık', 'Kapatmak', 'Eylem', '1997', 'Akşam'] },
+  { k: 'Ülke Gündemi', w: 'İstanbul Mucizesi', t: ['Liverpool', 'Final', 'Şampiyonlar Ligi', '2005', 'Milan'] },
+  { k: 'Ülke Gündemi', w: 'Formula 1', t: ['Yarış', 'Araba', 'Pilot', 'Pist', 'Hız'] },
+  { k: 'Ülke Gündemi', w: 'Euro 2008', t: ['Futbol', 'Yarı Final', 'Almanya', 'Son Dakika', 'Avrupa'] },
+  { k: 'Ülke Gündemi', w: 'Avrupa Kültür Başkenti', t: ['İstanbul', '2010', 'Etkinlik', 'Avrupa', 'Sanat'] },
+  { k: 'Ülke Gündemi', w: 'Metro', t: ['Raylı', 'Yeraltı', 'Tren', 'Durak', 'İstasyon'] },
+
+  // Magazin Haberleri
+  { k: 'Magazin Haberleri', w: 'Fatih Terim', t: ['İmparator', 'Teknik Direktör', 'Galatasaray', 'UEFA', 'Futbol'] },
+  { k: 'Magazin Haberleri', w: 'Hakan Şükür', t: ['Futbol', 'Gol', 'Galatasaray', 'Golcü', 'Dünya Kupası'] },
+  { k: 'Magazin Haberleri', w: 'Rüştü Reçber', t: ['Kaleci', 'Boya', 'Barcelona', 'Futbol', 'Milli Takım'] },
+  { k: 'Magazin Haberleri', w: 'Naim Süleymanoğlu', t: ['Halter', 'Cep Herkülü', 'Olimpiyat', 'Altın', 'Ağırlık'] },
+  { k: 'Magazin Haberleri', w: 'Hidayet Türkoğlu', t: ['NBA', 'Basketbol', 'Hedo', 'Amerika', 'Smaç'] },
+  { k: 'Magazin Haberleri', w: 'Prenses Diana', t: ['İngiltere', 'Kraliyet', 'Charles', 'Paris', 'Prenses'] },
+  { k: 'Magazin Haberleri', w: 'Live Aid', t: ['Konser', 'Yardım', 'Afrika', '1985', 'Wembley'] },
+  { k: 'Magazin Haberleri', w: 'Gelinlik', t: ['Düğün', 'Beyaz', 'Gelin', 'Duvak', 'Elbise'] },
+  { k: 'Magazin Haberleri', w: 'Eşkıya', t: ['Şener Şen', 'Baran', 'Film', 'Dağ', 'Yavuz Turgul'] },
+  { k: 'Magazin Haberleri', w: 'Transfer', t: ['Futbolcu', 'Kulüp', 'Para', 'İmza', 'Sezon'] },
 ];
