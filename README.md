@@ -1,6 +1,6 @@
 # ŞOKOPOP — 90'lar Magazin Yarışması
 
-İki takımın telefonla oynadığı, 90'lar magazin temalı parti oyunu. Büyük ekran (TV/laptop) QR gösterir, herkes telefonundan katılır.
+İki takımın telefonla oynadığı, 90'lar magazin temalı parti oyunu. Büyük ekran (TV/laptop) QR gösterir, herkes telefonundan katılır. Deneme
 
 ## Modlar
 
